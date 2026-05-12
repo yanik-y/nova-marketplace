@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import sqlite3
 import hashlib
 import os
@@ -432,29 +433,40 @@ def place_bid(item_id, bidder, amount, starting_price):
     return True
 
 
-def search_items(query="", category="All"):
+POST_TYPE_FILTER_LABELS = ["All", "Sale", "Auction", "Gift", "Looking for"]
+POST_TYPE_FILTER_TO_VALUE = {
+    "All": "All",
+    "Sale": "sell",
+    "Auction": "auction",
+    "Gift": "gift",
+    "Looking for": "searching",
+}
+
+
+def search_items(query="", category="All", post_type="All"):
     conn = connect_db()
     cursor = conn.cursor()
     q = f"%{query.lower().strip()}%"
 
-    if category == "All":
-        cursor.execute("""
-            SELECT id, title, description, category, price, seller_username, post_type, created_at, image_path, status
-            FROM items
-            WHERE status = 'available'
-              AND (lower(title) LIKE ? OR lower(description) LIKE ? OR lower(category) LIKE ? OR lower(post_type) LIKE ?)
-            ORDER BY created_at DESC
-        """, (q, q, q, q))
-    else:
-        cursor.execute("""
-            SELECT id, title, description, category, price, seller_username, post_type, created_at, image_path, status
-            FROM items
-            WHERE status = 'available'
-              AND category = ?
-              AND (lower(title) LIKE ? OR lower(description) LIKE ? OR lower(category) LIKE ? OR lower(post_type) LIKE ?)
-            ORDER BY created_at DESC
-        """, (category, q, q, q, q))
+    sql = """
+        SELECT id, title, description, category, price, seller_username, post_type, created_at, image_path, status
+        FROM items
+        WHERE status = 'available'
+          AND (lower(title) LIKE ? OR lower(description) LIKE ? OR lower(category) LIKE ? OR lower(post_type) LIKE ?)
+    """
+    params = [q, q, q, q]
 
+    if category != "All":
+        sql += " AND category = ?"
+        params.append(category)
+
+    if post_type != "All":
+        sql += " AND post_type = ?"
+        params.append(post_type)
+
+    sql += " ORDER BY created_at DESC"
+
+    cursor.execute(sql, params)
     items = cursor.fetchall()
     conn.close()
     return items
@@ -977,33 +989,66 @@ def display_item(
     unavailable = not item.is_available()
 
     if unavailable:
-        st.markdown("---")
-        st.caption("Unavailable item")
+        st.markdown(
+            '<span style="background:#eeeeee;color:#888;padding:3px 10px;border-radius:10px;'
+            'font-size:11px;font-weight:600;letter-spacing:0.5px;">UNAVAILABLE</span>',
+            unsafe_allow_html=True,
+        )
 
-    st.subheader(title)
+    st.markdown(
+        f'<div style="font-size:20px;font-weight:700;margin:6px 0 4px 0;">{title}</div>',
+        unsafe_allow_html=True,
+    )
 
     full_image_path = resolve_item_image(item_id, image_path)
     if full_image_path is not None and os.path.exists(full_image_path):
-        st.image(full_image_path, width=260)
+        st.image(full_image_path, use_container_width=True)
 
-    st.write(f"Description: {description}")
-    st.write(f"Category: {category}")
-    st.write(f"Type: {post_type}")
-    st.write(f"Seller: {format_user(seller_username)}")
-    st.write(f"Posted on: {created_at}")
-    st.write(f"Status: {status}")
-    st.write(f"Likes: {likes}")
+    type_colors = {
+        "sell": "#ff1236",
+        "auction": "#7b2cbf",
+        "gift": "#06a77d",
+        "searching": "#1d4e89",
+    }
+    type_color = type_colors.get(post_type, "#666")
+    st.markdown(
+        f'<div style="margin:6px 0;">'
+        f'<span style="background:{type_color};color:white;padding:3px 10px;border-radius:10px;'
+        f'font-size:11px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;">{post_type}</span>'
+        f' <span style="color:#888;font-size:12px;margin-left:6px;">{category}</span>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+    if description.strip() != "":
+        st.write(description)
+
+    st.caption(f"Seller: {format_user(seller_username)}  ·  Posted {created_at[:10]}  ·  ♥ {likes}")
 
     if post_type == "sell":
-        st.write(f"Price: {price}€")
+        st.markdown(
+            f'<div style="font-size:24px;font-weight:800;color:#ff1236;margin:8px 0;">{price}€</div>',
+            unsafe_allow_html=True,
+        )
     elif item.is_auction():
         highest_bid = item.highest_bid()
         bid_count = item.bid_count()
         if highest_bid is None:
-            st.write(f"Starting price: {price}€  ·  No bids yet")
+            st.markdown(
+                f'<div style="margin:8px 0;">'
+                f'<span style="font-size:22px;font-weight:800;color:#7b2cbf;">{price}€</span>'
+                f' <span style="color:#888;font-size:12px;">starting · no bids yet</span></div>',
+                unsafe_allow_html=True,
+            )
             next_min_bid = price + 1
         else:
-            st.write(f"Current bid: {highest_bid[0]}€  ·  {bid_count} bid{'s' if bid_count != 1 else ''}")
+            st.markdown(
+                f'<div style="margin:8px 0;">'
+                f'<span style="font-size:24px;font-weight:800;color:#7b2cbf;">{highest_bid[0]}€</span>'
+                f' <span style="color:#888;font-size:12px;">current bid · '
+                f'{bid_count} bid{"s" if bid_count != 1 else ""}</span></div>',
+                unsafe_allow_html=True,
+            )
             next_min_bid = highest_bid[0] + 1
 
         end_time_str = item.end_time()
@@ -1052,9 +1097,16 @@ def display_item(
                 else:
                     st.error("Bid rejected. Someone outbid you — try a higher amount.")
     elif post_type == "searching":
-        st.write(f"Maximum amount willing to pay: {price}€")
+        st.markdown(
+            f'<div style="margin:8px 0;color:#1d4e89;font-size:14px;">Will pay up to '
+            f'<strong style="font-size:18px;">{price}€</strong></div>',
+            unsafe_allow_html=True,
+        )
     else:
-        st.write("Price: free")
+        st.markdown(
+            '<div style="font-size:22px;font-weight:800;color:#06a77d;margin:8px 0;">Free</div>',
+            unsafe_allow_html=True,
+        )
 
     if unavailable:
         st.info("This post is unavailable. Actions are disabled.")
@@ -1199,43 +1251,110 @@ st.markdown(
     """
     <style>
       [data-testid="stSidebar"] { background-color: #ffd9df; }
-      .stButton button {
-          border-radius: 14px;
-          border: 1px solid #ff1236;
+      [data-testid="stSidebar"] .stButton button {
+          border-radius: 12px;
+          border: 1px solid rgba(255,18,54,0.35);
+          background: white;
+          color: #ff1236;
+          font-weight: 600;
+          transition: all 0.15s ease;
       }
+      [data-testid="stSidebar"] .stButton button:hover {
+          background: #ff1236;
+          color: white;
+          border-color: #ff1236;
+      }
+      [data-testid="stSidebar"] hr { border-color: rgba(255,18,54,0.18); }
+      .stButton button { border-radius: 12px; }
       div[data-testid="stContainer"] { border-radius: 18px; }
       h1, h2, h3 { color: #111; }
+      .nova-logo-block {
+        display: flex; align-items: center; gap: 12px;
+        padding: 8px 4px 14px 4px;
+      }
+      .nova-logo-box {
+        width: 44px; height: 44px; border-radius: 12px;
+        background: linear-gradient(135deg, #ff1236, #ff3655);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 4px 12px rgba(255,18,54,0.25);
+        flex-shrink: 0;
+      }
+      .nova-logo-planet {
+        width: 24px; height: 24px; border: 3px solid white;
+        border-radius: 50%; position: relative;
+      }
+      .nova-logo-ring {
+        position: absolute; width: 38px; height: 10px;
+        border: 3px solid white; border-radius: 50%;
+        transform: rotate(-18deg); top: 4px; left: -10px;
+      }
+      .nova-logo-dot {
+        width: 6px; height: 6px; background: white;
+        border-radius: 50%; position: absolute; top: 2px; right: -2px;
+      }
+      .nova-wordmark {
+        font-size: 24px; font-weight: 900;
+        letter-spacing: 1px; line-height: 0.9; color: #111;
+      }
+      .nova-subwordmark {
+        font-size: 9px; letter-spacing: 4px;
+        color: #ff2347; margin-top: 4px;
+      }
+      .nova-user-chip {
+        display: flex; align-items: center; gap: 10px;
+        background: white; padding: 10px 12px;
+        border-radius: 12px; margin: 4px 0 12px 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      }
+      .nova-avatar {
+        width: 36px; height: 36px; border-radius: 50%;
+        background: linear-gradient(135deg, #ff1236, #ff3655);
+        color: white; font-weight: 700; font-size: 14px;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+      }
+      .nova-user-name {
+        font-size: 13px; color: #111; font-weight: 600;
+        line-height: 1.2;
+      }
+      .nova-user-email {
+        font-size: 10px; color: #888; line-height: 1.2;
+        word-break: break-all;
+      }
+      .nova-tagline {
+        font-size: 14px; margin: 2px 0 22px 0; color: #333;
+      }
     </style>
-    <div style="display:flex; align-items:center; gap:18px; margin-bottom:8px;">
-      <div style="width:64px; height:64px; border-radius:16px;
-                  background:linear-gradient(135deg,#ff1236,#ff3655);
-                  display:flex; align-items:center; justify-content:center;
-                  box-shadow:0 6px 16px rgba(255,18,54,0.28);">
-        <div style="width:34px; height:34px; border:4px solid white;
-                    border-radius:50%; position:relative;">
-          <div style="position:absolute; width:54px; height:14px;
-                      border:4px solid white; border-radius:50%;
-                      transform:rotate(-18deg); top:7px; left:-14px;"></div>
-          <div style="width:7px; height:7px; background:white;
-                      border-radius:50%; position:absolute; top:3px; right:-3px;"></div>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:38px; font-weight:900; letter-spacing:1px; line-height:0.9;">NOVA</div>
-        <div style="font-size:14px; letter-spacing:6px; color:#ff2347; margin-top:4px;">MARKETPLACE</div>
-      </div>
-    </div>
-    <div style="font-size:15px; margin-bottom:24px;">
-      Buy<span style="color:#ff2347;font-weight:bold;">.</span>
-      Sell<span style="color:#ff2347;font-weight:bold;">.</span>
-      Gift<span style="color:#ff2347;font-weight:bold;">.</span>
-      Nova<span style="color:#ff2347;font-weight:bold;">.</span>
-    </div>
     """,
     unsafe_allow_html=True,
 )
 
+NOVA_LOGO_HTML = """
+<div class="nova-logo-block">
+  <div class="nova-logo-box">
+    <div class="nova-logo-planet">
+      <div class="nova-logo-ring"></div>
+      <div class="nova-logo-dot"></div>
+    </div>
+  </div>
+  <div>
+    <div class="nova-wordmark">NOVA</div>
+    <div class="nova-subwordmark">MARKETPLACE</div>
+  </div>
+</div>
+"""
+
+NOVA_TAGLINE_HTML = """
+<div class="nova-tagline">
+  Buy<span style="color:#ff2347;font-weight:bold;">.</span>
+  Sell<span style="color:#ff2347;font-weight:bold;">.</span>
+  Gift<span style="color:#ff2347;font-weight:bold;">.</span>
+  Nova<span style="color:#ff2347;font-weight:bold;">.</span>
+</div>
+"""
+
 if not st.session_state.logged_in:
+    st.markdown(NOVA_LOGO_HTML + NOVA_TAGLINE_HTML, unsafe_allow_html=True)
     st.sidebar.write("Menu")
     if st.sidebar.button("Create Profile", use_container_width=True):
         st.session_state.active_page = "Create Profile"
@@ -1284,14 +1403,59 @@ if not st.session_state.logged_in:
 
 else:
     current_user = st.session_state.username
-    st.sidebar.write("Logged in as:")
-    st.sidebar.write(f"**{current_user}**")
+
+    st.sidebar.markdown(NOVA_LOGO_HTML, unsafe_allow_html=True)
+
+    _user_row = get_user(current_user)
+    if _user_row is not None:
+        _first = _user_row[1] or ""
+        _last = _user_row[2] or ""
+        _initials = ((_first[:1] + _last[:1]) or "?").upper()
+        _display_name = f"{_first} {_last}".strip() or current_user
+        _display_email = _user_row[4]
+    else:
+        _initials = "?"
+        _display_name = current_user
+        _display_email = current_user
+
+    st.sidebar.markdown(
+        f"""
+        <div class="nova-user-chip">
+          <div class="nova-avatar">{_initials}</div>
+          <div>
+            <div class="nova-user-name">{_display_name}</div>
+            <div class="nova-user-email">{_display_email}</div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
     if st.sidebar.button("Logout", use_container_width=True):
         st.session_state.logged_in = False
         st.session_state.username = None
         st.session_state.show_old_post_warning = False
         st.session_state.active_thread = None
         st.rerun()
+
+    if "last_active_page" not in st.session_state:
+        st.session_state.last_active_page = st.session_state.active_page
+    if st.session_state.last_active_page != st.session_state.active_page:
+        st.session_state.last_active_page = st.session_state.active_page
+        components.html(
+            """
+            <script>
+              const win = window.parent;
+              if (win) {
+                const main = win.document.querySelector('section.main')
+                          || win.document.querySelector('[data-testid="stMain"]');
+                if (main) { main.scrollTop = 0; }
+                win.scrollTo(0, 0);
+              }
+            </script>
+            """,
+            height=0,
+        )
 
     st.sidebar.divider()
     st.sidebar.write("Menu")
@@ -1535,9 +1699,12 @@ else:
 
         with tab_products:
             product_query = st.text_input("Search product", key="product_search")
-            product_category = st.selectbox("Filter by category", ["All"] + CATEGORIES, key="product_category_filter")
+            filter_col1, filter_col2 = st.columns(2)
+            product_category = filter_col1.selectbox("Filter by category", ["All"] + CATEGORIES, key="product_category_filter")
+            product_type_label = filter_col2.selectbox("Filter by type", POST_TYPE_FILTER_LABELS, key="product_type_filter")
+            product_post_type = POST_TYPE_FILTER_TO_VALUE[product_type_label]
 
-            product_results = search_items(product_query, product_category)
+            product_results = search_items(product_query, product_category, product_post_type)
             st.subheader(f"Product results ({len(product_results)})")
 
             if len(product_results) == 0:
@@ -1559,8 +1726,11 @@ else:
                                     )
 
         with tab_newest:
-            newest_category = st.selectbox("Filter newest uploads by category", ["All"] + CATEGORIES, key="newest_category_filter")
-            newest_items = search_items("", newest_category)[:30]
+            newest_filter_col1, newest_filter_col2 = st.columns(2)
+            newest_category = newest_filter_col1.selectbox("Filter newest uploads by category", ["All"] + CATEGORIES, key="newest_category_filter")
+            newest_type_label = newest_filter_col2.selectbox("Filter by type", POST_TYPE_FILTER_LABELS, key="newest_type_filter")
+            newest_post_type = POST_TYPE_FILTER_TO_VALUE[newest_type_label]
+            newest_items = search_items("", newest_category, newest_post_type)[:30]
             st.subheader(f"Newest uploads ({len(newest_items)})")
 
             if len(newest_items) == 0:
