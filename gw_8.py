@@ -3,6 +3,7 @@ import sqlite3
 import hashlib
 import os
 import csv
+import requests
 import pandas as pd
 import pydeck as pdk
 from datetime import datetime, timedelta
@@ -814,56 +815,27 @@ def locations_to_map_df(locations, user_lat=None, user_lon=None):
     return pd.DataFrame(rows)
 
 
-def geocode_demo_address(address):
-    cleaned = address.lower().strip()
-
-    known_addresses = {
-        "nova sbe": (38.6781, -9.3273),
-        "nova school of business": (38.6781, -9.3273),
-        "carcavelos": (38.6781, -9.3273),
-        "marquês de pombal": (38.7253, -9.1500),
-        "marques de pombal": (38.7253, -9.1500),
-        "saldanha": (38.7350, -9.1450),
-        "campo pequeno": (38.7425, -9.1450),
-        "largo da graça": (38.7162, -9.1306),
-        "largo da graca": (38.7162, -9.1306),
-        "almirante reis": (38.7285, -9.1355),
-        "alcântara": (38.7040, -9.1780),
-        "alcantara": (38.7040, -9.1780),
-        "algés": (38.7062, -9.2263),
-        "alges": (38.7062, -9.2263),
-        "almada": (38.6794, -9.1581),
-        "amadora": (38.7598, -9.2303),
-        "oeiras": (38.7157, -9.3055),
-    }
-
-    for key, coords in known_addresses.items():
-        if key in cleaned:
-            return coords, "Matched a known demo area."
-
-    # Try to match one of the disposal addresses already stored in the database.
-    conn = connect_db()
-    cursor = conn.cursor()
-    cursor.execute("""
-        SELECT address, latitude, longitude
-        FROM disposal_locations
-        WHERE latitude IS NOT NULL AND longitude IS NOT NULL
-    """)
-    disposal_addresses = cursor.fetchall()
-    conn.close()
-
-    for stored_address, latitude, longitude in disposal_addresses:
-        stored_cleaned = stored_address.lower()
-        if cleaned != "" and (cleaned in stored_cleaned or stored_cleaned in cleaned):
-            return (latitude, longitude), "Matched a stored disposal address."
-
+@st.cache_data(ttl=3600, show_spinner=False)
+def geocode_address(address):
+    """Look up (lat, lon) for a free-text address via the OpenStreetMap Nominatim API.
+    Returns None if the address is empty or the lookup fails. Results are cached for an hour
+    so repeated lookups for the same address are instant and stay within the Nominatim usage policy."""
+    cleaned = address.strip()
     if cleaned == "":
-        return None, "Enter an address first."
-
-    if "lisboa" in cleaned or "lisbon" in cleaned:
-        return (38.7223, -9.1393), "Approximation: central Lisbon."
-
-    return (38.7223, -9.1393), "Approximation: central Lisbon. Add this address to the demo geocoder for more precision."
+        return None
+    try:
+        response = requests.get(
+            "https://nominatim.openstreetmap.org/search",
+            params={"q": cleaned, "format": "json", "limit": 1},
+            headers={"User-Agent": "nova-marketplace-uni-project (info@soneo.ai)"},
+            timeout=5,
+        )
+        results = response.json()
+        if not results:
+            return None
+        return float(results[0]["lat"]), float(results[0]["lon"])
+    except (requests.RequestException, ValueError, KeyError):
+        return None
 
 
 def show_location_map(map_df):
@@ -934,6 +906,38 @@ def resolve_item_image(item_id, fallback_image_path):
     return resolve_image_path(fallback_image_path)
 
 
+class Item:
+    """Wraps a row from the items table so the rest of the app can use attribute access
+    and small behavioural methods instead of raw tuple indexing."""
+
+    def __init__(self, row):
+        self.id = row[0]
+        self.title = row[1]
+        self.description = row[2]
+        self.category = row[3]
+        self.price = row[4]
+        self.seller_username = row[5]
+        self.post_type = row[6]
+        self.created_at = row[7]
+        self.image_path = row[8]
+        self.status = row[9]
+
+    def is_auction(self):
+        return self.post_type == "auction"
+
+    def is_available(self):
+        return self.status == "available"
+
+    def end_time(self):
+        return get_item_end_time(self.id)
+
+    def highest_bid(self):
+        return get_highest_bid(self.id)
+
+    def bid_count(self):
+        return get_bid_count(self.id)
+
+
 def display_item(
     item,
     current_user=None,
@@ -943,9 +947,20 @@ def display_item(
     show_contact_button=False,
     key_prefix="item"
 ):
-    item_id, title, description, category, price, seller_username, post_type, created_at, image_path, status = item[:10]
+    if not isinstance(item, Item):
+        item = Item(item)
+    item_id = item.id
+    title = item.title
+    description = item.description
+    category = item.category
+    price = item.price
+    seller_username = item.seller_username
+    post_type = item.post_type
+    created_at = item.created_at
+    image_path = item.image_path
+    status = item.status
     likes = get_favorite_count(item_id)
-    unavailable = status != "available"
+    unavailable = not item.is_available()
 
     if unavailable:
         st.markdown("---")
@@ -967,9 +982,9 @@ def display_item(
 
     if post_type == "sell":
         st.write(f"Price: {price}€")
-    elif post_type == "auction":
-        highest_bid = get_highest_bid(item_id)
-        bid_count = get_bid_count(item_id)
+    elif item.is_auction():
+        highest_bid = item.highest_bid()
+        bid_count = item.bid_count()
         if highest_bid is None:
             st.write(f"Starting price: {price}€  ·  No bids yet")
             next_min_bid = price + 1
@@ -977,7 +992,7 @@ def display_item(
             st.write(f"Current bid: {highest_bid[0]}€  ·  {bid_count} bid{'s' if bid_count != 1 else ''}")
             next_min_bid = highest_bid[0] + 1
 
-        end_time_str = get_item_end_time(item_id)
+        end_time_str = item.end_time()
         auction_active = False
         if end_time_str is not None:
             end_dt = datetime.strptime(end_time_str, "%Y-%m-%d %H:%M:%S")
@@ -1418,10 +1433,22 @@ else:
         category_filter = st.selectbox("Filter by category", disposal_categories, key="disposal_category")
         disposal_query = st.text_input("Search by name, type, address, or description", key="disposal_search")
 
+        user_address = st.text_input("Show your address on the map (optional)", key="disposal_user_address")
+        user_coords = None
+        if user_address.strip() != "":
+            user_coords = geocode_address(user_address)
+            if user_coords is None:
+                st.warning("Could not find that address. Try adding city or country (e.g. 'Avenida da Liberdade, Lisboa').")
+            else:
+                st.caption(f"Located at {user_coords[0]:.4f}, {user_coords[1]:.4f} via OpenStreetMap.")
+
         locations = get_disposal_locations(category_filter, disposal_query)
         st.subheader(f"Locations ({len(locations)})")
 
-        map_df = locations_to_map_df(locations)
+        if user_coords is not None:
+            map_df = locations_to_map_df(locations, user_lat=user_coords[0], user_lon=user_coords[1])
+        else:
+            map_df = locations_to_map_df(locations)
         show_location_map(map_df)
 
         with st.expander("Show location list", expanded=True):
