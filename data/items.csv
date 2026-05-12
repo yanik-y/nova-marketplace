@@ -1,0 +1,247 @@
+id,title,description,category,price,seller_username,post_type,created_at,image_path,status
+1,Winter jacket,Winter jacket in good condition. Demo post by Ana. This item is intentionally old for the demo reminder.,clothes,15,10000@novasbe.pt,sell,2026-02-25 12:00:00,uploaded_images/product_7.png,available
+2,Desk lamp,Desk lamp in good condition. Demo post by Miguel.,decoration,149,10001@novasbe.pt,auction,2026-04-24 11:00:00,uploaded_images/product_4.png,available
+3,Plant pot,Plant pot in good condition. Demo post by Miguel.,decoration,145,10001@novasbe.pt,auction,2026-04-17 10:00:00,uploaded_images/product_10.png,available
+4,Fairy lights,Fairy lights in good condition. Demo post by Sofia.,decoration,0,10002@novasbe.pt,searching,2026-04-10 09:00:00,uploaded_images/product_20.png,available
+5,Backpack,Backpack in good condition. Demo post by Sofia.,school supplies,0,10002@novasbe.pt,searching,2026-04-03 08:00:00,uploaded_images/product_3.png,available
+6,Backpack,Backpack in good condition. Demo post by Sofia.,school supplies,0,10002@novasbe.pt,gift,2026-03-27 07:00:00,uploaded_images/product_3.png,available
+7,Winter jacket,Winter jacket in good condition. Demo post by Sofia.,clothes,0,10002@novasbe.pt,gift,2026-03-20 06:00:00,uploaded_images/product_7.png,available
+8,Winter jacket,Winter jacket in good condition. Demo post by Luca.,clothes,0,10003@novasbe.pt,searching,2026-03-13 05:00:00,uploaded_images/product_7.png,available
+9,Notebook pack,Notebook pack in good condition. Demo post by Luca.,school supplies,0,10003@novasbe.pt,gift,2026-03-06 04:00:00,uploaded_images/product_19.png,available
+10,Sneakers,Sneakers in good condition. Demo post by Luca.,clothes,82,10003@novasbe.pt,sell,2026-02-27 03:00:00,uploaded_images/product_13.png,available
+11,Calculator,Calculator in good condition. Demo post by Emma.,school supplies,99,10004@novasbe.pt,sell,2026-02-20 02:00:00,uploaded_images/product_11.png,available
+12,Cooking pan,Cooking pan in good condition. Demo post by Emma.,kitchen,0,10004@novasbe.pt,gift,2026-02-13 01:00:00,uploaded_images/product_14.png,available
+13,Tennis racket,Tennis racket in good condition. Demo post by Noah.,sports,78,10005@novasbe.pt,auction,2026-02-06 12:00:00,uploaded_images/product_8.png,available
+14,Calculator,Calculator in good condition. Demo post by Noah.,school supplies,20,10005@novasbe.pt,sell,2026-01-30 11:00:00,uploaded_images/product_11.png,available
+15,Sneakers,Sneakers in good condition. Demo post by Yuki.,clothes,52,10006@novasbe.pt,sell,2026-01-23 10:00:00,uploaded_images/product_13.png,available
+16,Winter jacket,Winter jacket in good condition. Demo post by Yuki.,clothes,0,10006@novasbe.pt,gift,2026-01-16 09:00:00,uploaded_images/product_7.png,available
+17,Water bottle,Water bottle in good condition. Demo post by Aisha.,sports,134,10007@novasbe.pt,auction,2026-01-09 08:00:00,uploaded_images/product_18.png,available
+18,Backpack,Backpack in good condition. Demo post by Aisha.,school supplies,0,10007@novasbe.pt,searching,2026-01-02 07:00:00,uploaded_images/product_3.png,available
+19,Keyboard,Keyboard in good condition. Demo post by Aisha.,electronics,0,10007@novasbe.pt,searching,2025-12-26 06:00:00,uploaded_images/product_17.png,available
+20,Plant pot,Plant pot in good condition. Demo post by Chen.,decoration,50,10008@novasbe.pt,sell,2025-12-19 05:00:00,uploaded_images/product_10.png,available
+21,Novel set,Novel set in good condition. Demo post by Priya.,books,138,10009@novasbe.pt,auction,2025-12-12 04:00:00,uploaded_images/product_16.png,available
+22,Desk lamp,Desk lamp in good condition. Demo post by Priya.,decoration,0,10009@novasbe.pt,searching,2025-12-05 03:00:00,uploaded_images/product_4.png,available
+23,Backpack,Backpack in good condition. Demo post by Priya.,school supplies,39,10009@novasbe.pt,auction,2025-11-28 02:00:00,uploaded_images/product_3.png,available
+24,Cooking pan,Cooking pan in good condition. Demo post by Carlos.,kitchen,0,10010@novasbe.pt,gift,2026-04-25 01:00:00,uploaded_images/product_14.png,available
+25,Sneakers,Sneakers in good condition. Demo post by Carlos.,clothes,0,10010@novasbe.pt,searching,2026-04-18 12:00:00,uploaded_images/product_13.png,available
+26,Small table,Small table in good condition. Demo post by Fatima.,furniture,0,10011@novasbe.pt,gift,2026-04-11 11:00:00,uploaded_images/product_12.png,available
+27,Coffee mug,Coffee mug in good condition. Demo post by Fatima.,kitchen,39,10011@novasbe.pt,sell,2026-04-04 10:00:00,uploaded_images/product_6.png,available
+28,Tennis racket,Tennis racket in good condition. Demo post by Fatima.,sports,142,10011@novasbe.pt,auction,2026-03-28 09:00:00,uploaded_images/product_8.png,available
+29,Calculator,Calculator in good condition. Demo post by Hanna.,school supplies,67,10012@novasbe.pt,auction,2026-03-21 08:00:00,uploaded_images/product_11.png,available
+30,Desk chair,Desk chair in good condition. Demo post by Hanna.,furniture,112,10012@novasbe.pt,auction,2026-03-14 07:00:00,uploaded_images/product_1.png,available
+31,Fairy lights,Fairy lights in good condition. Demo post by Hanna.,decoration,70,10012@novasbe.pt,auction,2026-03-07 06:00:00,uploaded_images/product_20.png,available
+32,Calculator,Calculator in good condition. Demo post by Hanna.,school supplies,0,10012@novasbe.pt,gift,2026-02-28 05:00:00,uploaded_images/product_11.png,available
+33,Backpack,Backpack in good condition. Demo post by Omar.,school supplies,0,10013@novasbe.pt,gift,2026-02-21 04:00:00,uploaded_images/product_3.png,available
+34,Monitor,Monitor in good condition. Demo post by Omar.,electronics,0,10013@novasbe.pt,searching,2026-02-14 03:00:00,uploaded_images/product_9.png,available
+35,Coffee mug,Coffee mug in good condition. Demo post by Omar.,kitchen,0,10013@novasbe.pt,searching,2026-02-07 02:00:00,uploaded_images/product_6.png,available
+36,Keyboard,Keyboard in good condition. Demo post by Lea.,electronics,0,10014@novasbe.pt,searching,2026-01-31 01:00:00,uploaded_images/product_17.png,available
+37,Cooking pan,Cooking pan in good condition. Demo post by Lea.,kitchen,25,10014@novasbe.pt,auction,2026-01-24 12:00:00,uploaded_images/product_14.png,available
+38,Desk chair,Desk chair in good condition. Demo post by Lea.,furniture,0,10014@novasbe.pt,searching,2026-01-17 11:00:00,uploaded_images/product_1.png,available
+39,Keyboard,Keyboard in good condition. Demo post by Mateo.,electronics,81,10015@novasbe.pt,sell,2026-01-10 10:00:00,uploaded_images/product_17.png,available
+40,Notebook pack,Notebook pack in good condition. Demo post by Mateo.,school supplies,76,10015@novasbe.pt,auction,2026-01-03 09:00:00,uploaded_images/product_19.png,available
+41,Calculator,Calculator in good condition. Demo post by Mina.,school supplies,151,10016@novasbe.pt,auction,2025-12-27 08:00:00,uploaded_images/product_11.png,available
+42,Calculator,Calculator in good condition. Demo post by Mina.,school supplies,36,10016@novasbe.pt,sell,2025-12-20 07:00:00,uploaded_images/product_11.png,available
+43,Calculator,Calculator in good condition. Demo post by Mina.,school supplies,130,10016@novasbe.pt,auction,2025-12-13 06:00:00,uploaded_images/product_11.png,available
+44,Notebook pack,Notebook pack in good condition. Demo post by Mina.,school supplies,0,10016@novasbe.pt,gift,2025-12-06 05:00:00,uploaded_images/product_19.png,available
+45,Tennis racket,Tennis racket in good condition. Demo post by Arjun.,sports,141,10017@novasbe.pt,auction,2025-11-29 04:00:00,uploaded_images/product_8.png,available
+46,Notebook pack,Notebook pack in good condition. Demo post by Arjun.,school supplies,0,10017@novasbe.pt,searching,2026-04-26 03:00:00,uploaded_images/product_19.png,available
+47,Monitor,Monitor in good condition. Demo post by Arjun.,electronics,0,10017@novasbe.pt,gift,2026-04-19 02:00:00,uploaded_images/product_9.png,available
+48,Desk chair,Desk chair in good condition. Demo post by Arjun.,furniture,0,10017@novasbe.pt,gift,2026-04-12 01:00:00,uploaded_images/product_1.png,available
+49,Novel set,Novel set in good condition. Demo post by Sara.,books,0,10018@novasbe.pt,gift,2026-04-05 12:00:00,uploaded_images/product_16.png,available
+50,Monitor,Monitor in good condition. Demo post by Sara.,electronics,0,10018@novasbe.pt,searching,2026-03-29 11:00:00,uploaded_images/product_9.png,available
+51,Headphones,Headphones in good condition. Demo post by Daniel.,electronics,0,10019@novasbe.pt,searching,2026-03-22 10:00:00,uploaded_images/product_5.png,available
+52,Cooking pan,Cooking pan in good condition. Demo post by Daniel.,kitchen,116,10019@novasbe.pt,auction,2026-03-15 09:00:00,uploaded_images/product_14.png,available
+53,Small table,Small table in good condition. Demo post by Julia.,furniture,0,10020@novasbe.pt,gift,2026-03-08 08:00:00,uploaded_images/product_12.png,available
+54,Yoga mat,Yoga mat in good condition. Demo post by Julia.,sports,0,10020@novasbe.pt,gift,2026-03-01 07:00:00,uploaded_images/product_15.png,available
+55,Yoga mat,Yoga mat in good condition. Demo post by Nina.,sports,128,10021@novasbe.pt,auction,2026-02-22 06:00:00,uploaded_images/product_15.png,available
+56,Monitor,Monitor in good condition. Demo post by Nina.,electronics,20,10021@novasbe.pt,sell,2026-02-15 05:00:00,uploaded_images/product_9.png,available
+57,Small table,Small table in good condition. Demo post by Rafael.,furniture,153,10022@novasbe.pt,auction,2026-02-08 04:00:00,uploaded_images/product_12.png,available
+58,Novel set,Novel set in good condition. Demo post by Rafael.,books,158,10022@novasbe.pt,sell,2026-02-01 03:00:00,uploaded_images/product_16.png,available
+59,Tennis racket,Tennis racket in good condition. Demo post by Rafael.,sports,23,10022@novasbe.pt,auction,2026-01-25 02:00:00,uploaded_images/product_8.png,available
+60,Small table,Small table in good condition. Demo post by Elena.,furniture,133,10023@novasbe.pt,sell,2026-01-18 01:00:00,uploaded_images/product_12.png,available
+61,Desk chair,Desk chair in good condition. Demo post by Elena.,furniture,87,10023@novasbe.pt,auction,2026-01-11 12:00:00,uploaded_images/product_1.png,available
+62,Water bottle,Water bottle in good condition. Demo post by Elena.,sports,70,10023@novasbe.pt,sell,2026-01-04 11:00:00,uploaded_images/product_18.png,available
+63,Novel set,Novel set in good condition. Demo post by Maya.,books,0,10024@novasbe.pt,searching,2025-12-28 10:00:00,uploaded_images/product_16.png,available
+64,Yoga mat,Yoga mat in good condition. Demo post by Maya.,sports,64,10024@novasbe.pt,sell,2025-12-21 09:00:00,uploaded_images/product_15.png,available
+65,Statistics book,Statistics book in good condition. Demo post by Ivan.,books,0,10025@novasbe.pt,searching,2025-12-14 08:00:00,uploaded_images/product_2.png,available
+66,Coffee mug,Coffee mug in good condition. Demo post by Amara.,kitchen,98,10026@novasbe.pt,auction,2025-12-07 07:00:00,uploaded_images/product_6.png,available
+67,Monitor,Monitor in good condition. Demo post by Amara.,electronics,0,10026@novasbe.pt,gift,2025-11-30 06:00:00,uploaded_images/product_9.png,available
+68,Water bottle,Water bottle in good condition. Demo post by Amara.,sports,0,10026@novasbe.pt,searching,2026-04-27 05:00:00,uploaded_images/product_18.png,available
+69,Tennis racket,Tennis racket in good condition. Demo post by Amara.,sports,112,10026@novasbe.pt,sell,2026-04-20 04:00:00,uploaded_images/product_8.png,available
+70,Statistics book,Statistics book in good condition. Demo post by Leo.,books,0,10027@novasbe.pt,gift,2026-04-13 03:00:00,uploaded_images/product_2.png,available
+71,Headphones,Headphones in good condition. Demo post by Zara.,electronics,0,10028@novasbe.pt,searching,2026-04-06 02:00:00,uploaded_images/product_5.png,available
+72,Monitor,Monitor in good condition. Demo post by Hugo.,electronics,47,10029@novasbe.pt,sell,2026-03-30 01:00:00,uploaded_images/product_9.png,available
+73,Fairy lights,Fairy lights in good condition. Demo post by Hugo.,decoration,127,10029@novasbe.pt,sell,2026-03-23 12:00:00,uploaded_images/product_20.png,available
+74,Monitor,Monitor in good condition. Demo post by Lina.,electronics,0,10030@novasbe.pt,searching,2026-03-16 11:00:00,uploaded_images/product_9.png,available
+75,Yoga mat,Yoga mat in good condition. Demo post by Lina.,sports,0,10030@novasbe.pt,gift,2026-03-09 10:00:00,uploaded_images/product_15.png,available
+76,Calculator,Calculator in good condition. Demo post by Lina.,school supplies,0,10030@novasbe.pt,gift,2026-03-02 09:00:00,uploaded_images/product_11.png,available
+77,Cooking pan,Cooking pan in good condition. Demo post by Tariq.,kitchen,129,10031@novasbe.pt,sell,2026-02-23 08:00:00,uploaded_images/product_14.png,available
+78,Yoga mat,Yoga mat in good condition. Demo post by Tariq.,sports,156,10031@novasbe.pt,sell,2026-02-16 07:00:00,uploaded_images/product_15.png,available
+79,Fairy lights,Fairy lights in good condition. Demo post by Tariq.,decoration,14,10031@novasbe.pt,sell,2026-02-09 06:00:00,uploaded_images/product_20.png,available
+80,Backpack,Backpack in good condition. Demo post by Nora.,school supplies,9,10032@novasbe.pt,auction,2026-02-02 05:00:00,uploaded_images/product_3.png,available
+81,Plant pot,Plant pot in good condition. Demo post by Mei.,decoration,0,10033@novasbe.pt,searching,2026-01-26 04:00:00,uploaded_images/product_10.png,available
+82,Cooking pan,Cooking pan in good condition. Demo post by Mei.,kitchen,0,10033@novasbe.pt,searching,2026-01-19 03:00:00,uploaded_images/product_14.png,available
+83,Small table,Small table in good condition. Demo post by Mei.,furniture,0,10033@novasbe.pt,searching,2026-01-12 02:00:00,uploaded_images/product_12.png,available
+84,Monitor,Monitor in good condition. Demo post by Diego.,electronics,114,10034@novasbe.pt,sell,2026-01-05 01:00:00,uploaded_images/product_9.png,available
+85,Winter jacket,Winter jacket in good condition. Demo post by Kira.,clothes,0,10035@novasbe.pt,gift,2025-12-29 12:00:00,uploaded_images/product_7.png,available
+86,Notebook pack,Notebook pack in good condition. Demo post by Jonas.,school supplies,0,10036@novasbe.pt,searching,2025-12-22 11:00:00,uploaded_images/product_19.png,available
+87,Yoga mat,Yoga mat in good condition. Demo post by Jonas.,sports,0,10036@novasbe.pt,gift,2025-12-15 10:00:00,uploaded_images/product_15.png,available
+88,Water bottle,Water bottle in good condition. Demo post by Jonas.,sports,29,10036@novasbe.pt,auction,2025-12-08 09:00:00,uploaded_images/product_18.png,available
+89,Fairy lights,Fairy lights in good condition. Demo post by Iris.,decoration,55,10037@novasbe.pt,sell,2025-12-01 08:00:00,uploaded_images/product_20.png,available
+90,Tennis racket,Tennis racket in good condition. Demo post by Iris.,sports,122,10037@novasbe.pt,sell,2026-04-28 07:00:00,uploaded_images/product_8.png,available
+91,Backpack,Backpack in good condition. Demo post by Iris.,school supplies,0,10037@novasbe.pt,gift,2026-04-21 06:00:00,uploaded_images/product_3.png,available
+92,Small table,Small table in good condition. Demo post by Kenji.,furniture,0,10038@novasbe.pt,gift,2026-04-14 05:00:00,uploaded_images/product_12.png,available
+93,Calculator,Calculator in good condition. Demo post by Mila.,school supplies,120,10039@novasbe.pt,auction,2026-04-07 04:00:00,uploaded_images/product_11.png,available
+94,Backpack,Backpack in good condition. Demo post by Ana.,school supplies,49,10040@novasbe.pt,sell,2026-03-31 03:00:00,uploaded_images/product_3.png,available
+95,Plant pot,Plant pot in good condition. Demo post by Ana.,decoration,0,10040@novasbe.pt,searching,2026-03-24 02:00:00,uploaded_images/product_10.png,available
+96,Keyboard,Keyboard in good condition. Demo post by Miguel.,electronics,0,10041@novasbe.pt,gift,2026-03-17 01:00:00,uploaded_images/product_17.png,available
+97,Monitor,Monitor in good condition. Demo post by Miguel.,electronics,0,10041@novasbe.pt,gift,2026-03-10 12:00:00,uploaded_images/product_9.png,available
+98,Cooking pan,Cooking pan in good condition. Demo post by Miguel.,kitchen,0,10041@novasbe.pt,gift,2026-03-03 11:00:00,uploaded_images/product_14.png,available
+99,Monitor,Monitor in good condition. Demo post by Sofia.,electronics,87,10042@novasbe.pt,auction,2026-02-24 10:00:00,uploaded_images/product_9.png,available
+100,Coffee mug,Coffee mug in good condition. Demo post by Luca.,kitchen,0,10043@novasbe.pt,gift,2026-02-17 09:00:00,uploaded_images/product_6.png,available
+101,Tennis racket,Tennis racket in good condition. Demo post by Luca.,sports,0,10043@novasbe.pt,gift,2026-02-10 08:00:00,uploaded_images/product_8.png,available
+102,Desk chair,Desk chair in good condition. Demo post by Emma.,furniture,60,10044@novasbe.pt,auction,2026-02-03 07:00:00,uploaded_images/product_1.png,available
+103,Yoga mat,Yoga mat in good condition. Demo post by Emma.,sports,64,10044@novasbe.pt,sell,2026-01-27 06:00:00,uploaded_images/product_15.png,available
+104,Calculator,Calculator in good condition. Demo post by Emma.,school supplies,21,10044@novasbe.pt,sell,2026-01-20 05:00:00,uploaded_images/product_11.png,available
+105,Winter jacket,Winter jacket in good condition. Demo post by Noah.,clothes,0,10045@novasbe.pt,searching,2026-01-13 04:00:00,uploaded_images/product_7.png,available
+106,Backpack,Backpack in good condition. Demo post by Noah.,school supplies,118,10045@novasbe.pt,auction,2026-01-06 03:00:00,uploaded_images/product_3.png,available
+107,Headphones,Headphones in good condition. Demo post by Yuki.,electronics,143,10046@novasbe.pt,auction,2025-12-30 02:00:00,uploaded_images/product_5.png,available
+108,Headphones,Headphones in good condition. Demo post by Yuki.,electronics,50,10046@novasbe.pt,auction,2025-12-23 01:00:00,uploaded_images/product_5.png,available
+109,Yoga mat,Yoga mat in good condition. Demo post by Yuki.,sports,0,10046@novasbe.pt,searching,2025-12-16 12:00:00,uploaded_images/product_15.png,available
+110,Desk lamp,Desk lamp in good condition. Demo post by Yuki.,decoration,0,10046@novasbe.pt,searching,2025-12-09 11:00:00,uploaded_images/product_4.png,available
+111,Cooking pan,Cooking pan in good condition. Demo post by Aisha.,kitchen,0,10047@novasbe.pt,gift,2025-12-02 10:00:00,uploaded_images/product_14.png,available
+112,Cooking pan,Cooking pan in good condition. Demo post by Aisha.,kitchen,0,10047@novasbe.pt,searching,2026-04-29 09:00:00,uploaded_images/product_14.png,available
+113,Desk lamp,Desk lamp in good condition. Demo post by Chen.,decoration,55,10048@novasbe.pt,sell,2026-04-22 08:00:00,uploaded_images/product_4.png,available
+114,Headphones,Headphones in good condition. Demo post by Chen.,electronics,133,10048@novasbe.pt,sell,2026-04-15 07:00:00,uploaded_images/product_5.png,available
+115,Statistics book,Statistics book in good condition. Demo post by Priya.,books,136,10049@novasbe.pt,auction,2026-04-08 06:00:00,uploaded_images/product_2.png,available
+116,Sneakers,Sneakers in good condition. Demo post by Priya.,clothes,0,10049@novasbe.pt,gift,2026-04-01 05:00:00,uploaded_images/product_13.png,available
+117,Cooking pan,Cooking pan in good condition. Demo post by Priya.,kitchen,35,10049@novasbe.pt,auction,2026-03-25 04:00:00,uploaded_images/product_14.png,available
+118,Headphones,Headphones in good condition. Demo post by Priya.,electronics,0,10049@novasbe.pt,searching,2026-03-18 03:00:00,uploaded_images/product_5.png,available
+119,Yoga mat,Yoga mat in good condition. Demo post by Carlos.,sports,0,10050@novasbe.pt,gift,2026-03-11 02:00:00,uploaded_images/product_15.png,available
+120,Fairy lights,Fairy lights in good condition. Demo post by Carlos.,decoration,60,10050@novasbe.pt,sell,2026-03-04 01:00:00,uploaded_images/product_20.png,available
+121,Cooking pan,Cooking pan in good condition. Demo post by Carlos.,kitchen,92,10050@novasbe.pt,auction,2026-02-25 12:00:00,uploaded_images/product_14.png,available
+122,Novel set,Novel set in good condition. Demo post by Fatima.,books,0,10051@novasbe.pt,searching,2026-02-18 11:00:00,uploaded_images/product_16.png,available
+123,Desk lamp,Desk lamp in good condition. Demo post by Fatima.,decoration,84,10051@novasbe.pt,sell,2026-02-11 10:00:00,uploaded_images/product_4.png,available
+124,Calculator,Calculator in good condition. Demo post by Fatima.,school supplies,126,10051@novasbe.pt,auction,2026-02-04 09:00:00,uploaded_images/product_11.png,available
+125,Sneakers,Sneakers in good condition. Demo post by Hanna.,clothes,0,10052@novasbe.pt,searching,2026-01-28 08:00:00,uploaded_images/product_13.png,available
+126,Desk lamp,Desk lamp in good condition. Demo post by Hanna.,decoration,45,10052@novasbe.pt,sell,2026-01-21 07:00:00,uploaded_images/product_4.png,available
+127,Water bottle,Water bottle in good condition. Demo post by Hanna.,sports,12,10052@novasbe.pt,sell,2026-01-14 06:00:00,uploaded_images/product_18.png,available
+128,Tennis racket,Tennis racket in good condition. Demo post by Hanna.,sports,0,10052@novasbe.pt,searching,2026-01-07 05:00:00,uploaded_images/product_8.png,available
+129,Statistics book,Statistics book in good condition. Demo post by Omar.,books,0,10053@novasbe.pt,gift,2025-12-31 04:00:00,uploaded_images/product_2.png,available
+130,Water bottle,Water bottle in good condition. Demo post by Omar.,sports,93,10053@novasbe.pt,auction,2025-12-24 03:00:00,uploaded_images/product_18.png,available
+131,Statistics book,Statistics book in good condition. Demo post by Omar.,books,0,10053@novasbe.pt,searching,2025-12-17 02:00:00,uploaded_images/product_2.png,available
+132,Tennis racket,Tennis racket in good condition. Demo post by Lea.,sports,0,10054@novasbe.pt,searching,2025-12-10 01:00:00,uploaded_images/product_8.png,available
+133,Fairy lights,Fairy lights in good condition. Demo post by Lea.,decoration,48,10054@novasbe.pt,sell,2025-12-03 12:00:00,uploaded_images/product_20.png,available
+134,Monitor,Monitor in good condition. Demo post by Lea.,electronics,85,10054@novasbe.pt,sell,2026-04-30 11:00:00,uploaded_images/product_9.png,available
+135,Novel set,Novel set in good condition. Demo post by Mateo.,books,0,10055@novasbe.pt,gift,2026-04-23 10:00:00,uploaded_images/product_16.png,available
+136,Desk chair,Desk chair in good condition. Demo post by Mateo.,furniture,137,10055@novasbe.pt,sell,2026-04-16 09:00:00,uploaded_images/product_1.png,available
+137,Fairy lights,Fairy lights in good condition. Demo post by Mateo.,decoration,125,10055@novasbe.pt,sell,2026-04-09 08:00:00,uploaded_images/product_20.png,available
+138,Desk lamp,Desk lamp in good condition. Demo post by Mina.,decoration,8,10056@novasbe.pt,auction,2026-04-02 07:00:00,uploaded_images/product_4.png,available
+139,Notebook pack,Notebook pack in good condition. Demo post by Mina.,school supplies,0,10056@novasbe.pt,searching,2026-03-26 06:00:00,uploaded_images/product_19.png,available
+140,Small table,Small table in good condition. Demo post by Mina.,furniture,99,10056@novasbe.pt,sell,2026-03-19 05:00:00,uploaded_images/product_12.png,available
+141,Plant pot,Plant pot in good condition. Demo post by Arjun.,decoration,0,10057@novasbe.pt,searching,2026-03-12 04:00:00,uploaded_images/product_10.png,available
+142,Statistics book,Statistics book in good condition. Demo post by Arjun.,books,120,10057@novasbe.pt,sell,2026-03-05 03:00:00,uploaded_images/product_2.png,available
+143,Statistics book,Statistics book in good condition. Demo post by Arjun.,books,32,10057@novasbe.pt,sell,2026-02-26 02:00:00,uploaded_images/product_2.png,available
+144,Fairy lights,Fairy lights in good condition. Demo post by Arjun.,decoration,0,10057@novasbe.pt,searching,2026-02-19 01:00:00,uploaded_images/product_20.png,available
+145,Water bottle,Water bottle in good condition. Demo post by Sara.,sports,0,10058@novasbe.pt,gift,2026-02-12 12:00:00,uploaded_images/product_18.png,available
+146,Winter jacket,Winter jacket in good condition. Demo post by Sara.,clothes,65,10058@novasbe.pt,sell,2026-02-05 11:00:00,uploaded_images/product_7.png,available
+147,Yoga mat,Yoga mat in good condition. Demo post by Sara.,sports,0,10058@novasbe.pt,searching,2026-01-29 10:00:00,uploaded_images/product_15.png,available
+148,Statistics book,Statistics book in good condition. Demo post by Sara.,books,0,10058@novasbe.pt,searching,2026-01-22 09:00:00,uploaded_images/product_2.png,available
+149,Small table,Small table in good condition. Demo post by Daniel.,furniture,44,10059@novasbe.pt,auction,2026-01-15 08:00:00,uploaded_images/product_12.png,available
+150,Tennis racket,Tennis racket in good condition. Demo post by Daniel.,sports,21,10059@novasbe.pt,auction,2026-01-08 07:00:00,uploaded_images/product_8.png,available
+151,Small table,Small table in good condition. Demo post by Daniel.,furniture,110,10059@novasbe.pt,auction,2026-01-01 06:00:00,uploaded_images/product_12.png,available
+152,Statistics book,Statistics book in good condition. Demo post by Julia.,books,41,10060@novasbe.pt,sell,2025-12-25 05:00:00,uploaded_images/product_2.png,available
+153,Calculator,Calculator in good condition. Demo post by Nina.,school supplies,101,10061@novasbe.pt,auction,2025-12-18 04:00:00,uploaded_images/product_11.png,available
+154,Headphones,Headphones in good condition. Demo post by Nina.,electronics,0,10061@novasbe.pt,gift,2025-12-11 03:00:00,uploaded_images/product_5.png,available
+155,Winter jacket,Winter jacket in good condition. Demo post by Rafael.,clothes,91,10062@novasbe.pt,auction,2025-12-04 02:00:00,uploaded_images/product_7.png,available
+156,Sneakers,Sneakers in good condition. Demo post by Rafael.,clothes,0,10062@novasbe.pt,gift,2026-05-01 01:00:00,uploaded_images/product_13.png,available
+157,Yoga mat,Yoga mat in good condition. Demo post by Elena.,sports,107,10063@novasbe.pt,sell,2026-04-24 12:00:00,uploaded_images/product_15.png,available
+158,Statistics book,Statistics book in good condition. Demo post by Maya.,books,125,10064@novasbe.pt,sell,2026-04-17 11:00:00,uploaded_images/product_2.png,available
+159,Monitor,Monitor in good condition. Demo post by Ivan.,electronics,101,10065@novasbe.pt,auction,2026-04-10 10:00:00,uploaded_images/product_9.png,available
+160,Backpack,Backpack in good condition. Demo post by Amara.,school supplies,116,10066@novasbe.pt,auction,2026-04-03 09:00:00,uploaded_images/product_3.png,available
+161,Plant pot,Plant pot in good condition. Demo post by Amara.,decoration,145,10066@novasbe.pt,auction,2026-03-27 08:00:00,uploaded_images/product_10.png,available
+162,Desk lamp,Desk lamp in good condition. Demo post by Amara.,decoration,23,10066@novasbe.pt,sell,2026-03-20 07:00:00,uploaded_images/product_4.png,available
+163,Monitor,Monitor in good condition. Demo post by Leo.,electronics,68,10067@novasbe.pt,auction,2026-03-13 06:00:00,uploaded_images/product_9.png,available
+164,Notebook pack,Notebook pack in good condition. Demo post by Zara.,school supplies,0,10068@novasbe.pt,searching,2026-03-06 05:00:00,uploaded_images/product_19.png,available
+165,Fairy lights,Fairy lights in good condition. Demo post by Zara.,decoration,0,10068@novasbe.pt,gift,2026-02-27 04:00:00,uploaded_images/product_20.png,available
+166,Cooking pan,Cooking pan in good condition. Demo post by Zara.,kitchen,106,10068@novasbe.pt,auction,2026-02-20 03:00:00,uploaded_images/product_14.png,available
+167,Sneakers,Sneakers in good condition. Demo post by Zara.,clothes,45,10068@novasbe.pt,auction,2026-02-13 02:00:00,uploaded_images/product_13.png,available
+168,Notebook pack,Notebook pack in good condition. Demo post by Hugo.,school supplies,0,10069@novasbe.pt,gift,2026-02-06 01:00:00,uploaded_images/product_19.png,available
+169,Statistics book,Statistics book in good condition. Demo post by Lina.,books,0,10070@novasbe.pt,gift,2026-01-30 12:00:00,uploaded_images/product_2.png,available
+170,Small table,Small table in good condition. Demo post by Lina.,furniture,0,10070@novasbe.pt,gift,2026-01-23 11:00:00,uploaded_images/product_12.png,available
+171,Coffee mug,Coffee mug in good condition. Demo post by Tariq.,kitchen,0,10071@novasbe.pt,searching,2026-01-16 10:00:00,uploaded_images/product_6.png,available
+172,Calculator,Calculator in good condition. Demo post by Nora.,school supplies,142,10072@novasbe.pt,sell,2026-01-09 09:00:00,uploaded_images/product_11.png,available
+173,Water bottle,Water bottle in good condition. Demo post by Nora.,sports,0,10072@novasbe.pt,searching,2026-01-02 08:00:00,uploaded_images/product_18.png,available
+174,Keyboard,Keyboard in good condition. Demo post by Nora.,electronics,0,10072@novasbe.pt,searching,2025-12-26 07:00:00,uploaded_images/product_17.png,available
+175,Cooking pan,Cooking pan in good condition. Demo post by Nora.,kitchen,96,10072@novasbe.pt,auction,2025-12-19 06:00:00,uploaded_images/product_14.png,available
+176,Calculator,Calculator in good condition. Demo post by Mei.,school supplies,139,10073@novasbe.pt,auction,2025-12-12 05:00:00,uploaded_images/product_11.png,available
+177,Small table,Small table in good condition. Demo post by Mei.,furniture,0,10073@novasbe.pt,gift,2025-12-05 04:00:00,uploaded_images/product_12.png,available
+178,Desk lamp,Desk lamp in good condition. Demo post by Mei.,decoration,0,10073@novasbe.pt,searching,2025-11-28 03:00:00,uploaded_images/product_4.png,available
+179,Winter jacket,Winter jacket in good condition. Demo post by Mei.,clothes,122,10073@novasbe.pt,auction,2026-04-25 02:00:00,uploaded_images/product_7.png,available
+180,Plant pot,Plant pot in good condition. Demo post by Diego.,decoration,0,10074@novasbe.pt,searching,2026-04-18 01:00:00,uploaded_images/product_10.png,available
+181,Monitor,Monitor in good condition. Demo post by Diego.,electronics,0,10074@novasbe.pt,gift,2026-04-11 12:00:00,uploaded_images/product_9.png,available
+182,Keyboard,Keyboard in good condition. Demo post by Diego.,electronics,0,10074@novasbe.pt,gift,2026-04-04 11:00:00,uploaded_images/product_17.png,available
+183,Headphones,Headphones in good condition. Demo post by Kira.,electronics,94,10075@novasbe.pt,auction,2026-03-28 10:00:00,uploaded_images/product_5.png,available
+184,Headphones,Headphones in good condition. Demo post by Kira.,electronics,79,10075@novasbe.pt,sell,2026-03-21 09:00:00,uploaded_images/product_5.png,available
+185,Tennis racket,Tennis racket in good condition. Demo post by Kira.,sports,0,10075@novasbe.pt,searching,2026-03-14 08:00:00,uploaded_images/product_8.png,available
+186,Plant pot,Plant pot in good condition. Demo post by Jonas.,decoration,0,10076@novasbe.pt,gift,2026-03-07 07:00:00,uploaded_images/product_10.png,available
+187,Novel set,Novel set in good condition. Demo post by Jonas.,books,0,10076@novasbe.pt,gift,2026-02-28 06:00:00,uploaded_images/product_16.png,available
+188,Small table,Small table in good condition. Demo post by Iris.,furniture,0,10077@novasbe.pt,gift,2026-02-21 05:00:00,uploaded_images/product_12.png,available
+189,Cooking pan,Cooking pan in good condition. Demo post by Iris.,kitchen,78,10077@novasbe.pt,auction,2026-02-14 04:00:00,uploaded_images/product_14.png,available
+190,Desk chair,Desk chair in good condition. Demo post by Iris.,furniture,95,10077@novasbe.pt,auction,2026-02-07 03:00:00,uploaded_images/product_1.png,available
+191,Fairy lights,Fairy lights in good condition. Demo post by Iris.,decoration,0,10077@novasbe.pt,gift,2026-01-31 02:00:00,uploaded_images/product_20.png,available
+192,Plant pot,Plant pot in good condition. Demo post by Kenji.,decoration,63,10078@novasbe.pt,auction,2026-01-24 01:00:00,uploaded_images/product_10.png,available
+193,Headphones,Headphones in good condition. Demo post by Kenji.,electronics,37,10078@novasbe.pt,sell,2026-01-17 12:00:00,uploaded_images/product_5.png,available
+194,Yoga mat,Yoga mat in good condition. Demo post by Kenji.,sports,49,10078@novasbe.pt,auction,2026-01-10 11:00:00,uploaded_images/product_15.png,available
+195,Desk lamp,Desk lamp in good condition. Demo post by Kenji.,decoration,0,10078@novasbe.pt,searching,2026-01-03 10:00:00,uploaded_images/product_4.png,available
+196,Backpack,Backpack in good condition. Demo post by Mila.,school supplies,130,10079@novasbe.pt,auction,2025-12-27 09:00:00,uploaded_images/product_3.png,available
+197,Desk chair,Desk chair in good condition. Demo post by Mila.,furniture,0,10079@novasbe.pt,gift,2025-12-20 08:00:00,uploaded_images/product_1.png,available
+198,Plant pot,Plant pot in good condition. Demo post by Mila.,decoration,0,10079@novasbe.pt,gift,2025-12-13 07:00:00,uploaded_images/product_10.png,available
+199,Yoga mat,Yoga mat in good condition. Demo post by Ana.,sports,28,10080@novasbe.pt,sell,2025-12-06 06:00:00,uploaded_images/product_15.png,available
+200,Fairy lights,Fairy lights in good condition. Demo post by Miguel.,decoration,0,10081@novasbe.pt,gift,2025-11-29 05:00:00,uploaded_images/product_20.png,available
+201,Desk chair,Desk chair in good condition. Demo post by Miguel.,furniture,72,10081@novasbe.pt,sell,2026-04-26 04:00:00,uploaded_images/product_1.png,available
+202,Winter jacket,Winter jacket in good condition. Demo post by Sofia.,clothes,0,10082@novasbe.pt,searching,2026-04-19 03:00:00,uploaded_images/product_7.png,available
+203,Yoga mat,Yoga mat in good condition. Demo post by Sofia.,sports,62,10082@novasbe.pt,auction,2026-04-12 02:00:00,uploaded_images/product_15.png,available
+204,Statistics book,Statistics book in good condition. Demo post by Sofia.,books,102,10082@novasbe.pt,sell,2026-04-05 01:00:00,uploaded_images/product_2.png,available
+205,Tennis racket,Tennis racket in good condition. Demo post by Sofia.,sports,135,10082@novasbe.pt,sell,2026-03-29 12:00:00,uploaded_images/product_8.png,available
+206,Desk chair,Desk chair in good condition. Demo post by Luca.,furniture,0,10083@novasbe.pt,gift,2026-03-22 11:00:00,uploaded_images/product_1.png,available
+207,Coffee mug,Coffee mug in good condition. Demo post by Luca.,kitchen,0,10083@novasbe.pt,gift,2026-03-15 10:00:00,uploaded_images/product_6.png,available
+208,Backpack,Backpack in good condition. Demo post by Emma.,school supplies,84,10084@novasbe.pt,auction,2026-03-08 09:00:00,uploaded_images/product_3.png,available
+209,Water bottle,Water bottle in good condition. Demo post by Emma.,sports,125,10084@novasbe.pt,sell,2026-03-01 08:00:00,uploaded_images/product_18.png,available
+210,Small table,Small table in good condition. Demo post by Emma.,furniture,105,10084@novasbe.pt,auction,2026-02-22 07:00:00,uploaded_images/product_12.png,available
+211,Coffee mug,Coffee mug in good condition. Demo post by Noah.,kitchen,28,10085@novasbe.pt,sell,2026-02-15 06:00:00,uploaded_images/product_6.png,available
+212,Monitor,Monitor in good condition. Demo post by Noah.,electronics,103,10085@novasbe.pt,sell,2026-02-08 05:00:00,uploaded_images/product_9.png,available
+213,Plant pot,Plant pot in good condition. Demo post by Yuki.,decoration,0,10086@novasbe.pt,searching,2026-02-01 04:00:00,uploaded_images/product_10.png,available
+214,Desk lamp,Desk lamp in good condition. Demo post by Yuki.,decoration,0,10086@novasbe.pt,gift,2026-01-25 03:00:00,uploaded_images/product_4.png,available
+215,Cooking pan,Cooking pan in good condition. Demo post by Yuki.,kitchen,30,10086@novasbe.pt,auction,2026-01-18 02:00:00,uploaded_images/product_14.png,available
+216,Desk lamp,Desk lamp in good condition. Demo post by Aisha.,decoration,0,10087@novasbe.pt,searching,2026-01-11 01:00:00,uploaded_images/product_4.png,available
+217,Small table,Small table in good condition. Demo post by Aisha.,furniture,18,10087@novasbe.pt,auction,2026-01-04 12:00:00,uploaded_images/product_12.png,available
+218,Cooking pan,Cooking pan in good condition. Demo post by Chen.,kitchen,118,10088@novasbe.pt,auction,2025-12-28 11:00:00,uploaded_images/product_14.png,available
+219,Winter jacket,Winter jacket in good condition. Demo post by Priya.,clothes,114,10089@novasbe.pt,sell,2025-12-21 10:00:00,uploaded_images/product_7.png,available
+220,Sneakers,Sneakers in good condition. Demo post by Priya.,clothes,45,10089@novasbe.pt,auction,2025-12-14 09:00:00,uploaded_images/product_13.png,available
+221,Water bottle,Water bottle in good condition. Demo post by Priya.,sports,103,10089@novasbe.pt,sell,2025-12-07 08:00:00,uploaded_images/product_18.png,available
+222,Plant pot,Plant pot in good condition. Demo post by Priya.,decoration,0,10089@novasbe.pt,searching,2025-11-30 07:00:00,uploaded_images/product_10.png,available
+223,Keyboard,Keyboard in good condition. Demo post by Carlos.,electronics,77,10090@novasbe.pt,sell,2026-04-27 06:00:00,uploaded_images/product_17.png,available
+224,Water bottle,Water bottle in good condition. Demo post by Carlos.,sports,72,10090@novasbe.pt,sell,2026-04-20 05:00:00,uploaded_images/product_18.png,available
+225,Calculator,Calculator in good condition. Demo post by Carlos.,school supplies,0,10090@novasbe.pt,searching,2026-04-13 04:00:00,uploaded_images/product_11.png,available
+226,Novel set,Novel set in good condition. Demo post by Fatima.,books,0,10091@novasbe.pt,gift,2026-04-06 03:00:00,uploaded_images/product_16.png,available
+227,Statistics book,Statistics book in good condition. Demo post by Fatima.,books,22,10091@novasbe.pt,auction,2026-03-30 02:00:00,uploaded_images/product_2.png,available
+228,Desk chair,Desk chair in good condition. Demo post by Fatima.,furniture,0,10091@novasbe.pt,gift,2026-03-23 01:00:00,uploaded_images/product_1.png,available
+229,Coffee mug,Coffee mug in good condition. Demo post by Fatima.,kitchen,0,10091@novasbe.pt,gift,2026-03-16 12:00:00,uploaded_images/product_6.png,available
+230,Desk chair,Desk chair in good condition. Demo post by Hanna.,furniture,0,10092@novasbe.pt,searching,2026-03-09 11:00:00,uploaded_images/product_1.png,available
+231,Water bottle,Water bottle in good condition. Demo post by Hanna.,sports,0,10092@novasbe.pt,gift,2026-03-02 10:00:00,uploaded_images/product_18.png,available
+232,Yoga mat,Yoga mat in good condition. Demo post by Hanna.,sports,151,10092@novasbe.pt,sell,2026-02-23 09:00:00,uploaded_images/product_15.png,available
+233,Headphones,Headphones in good condition. Demo post by Omar.,electronics,0,10093@novasbe.pt,gift,2026-02-16 08:00:00,uploaded_images/product_5.png,available
+234,Statistics book,Statistics book in good condition. Demo post by Omar.,books,130,10093@novasbe.pt,sell,2026-02-09 07:00:00,uploaded_images/product_2.png,available
+235,Novel set,Novel set in good condition. Demo post by Lea.,books,0,10094@novasbe.pt,gift,2026-02-02 06:00:00,uploaded_images/product_16.png,available
+236,Backpack,Backpack in good condition. Demo post by Lea.,school supplies,0,10094@novasbe.pt,searching,2026-01-26 05:00:00,uploaded_images/product_3.png,available
+237,Plant pot,Plant pot in good condition. Demo post by Mateo.,decoration,67,10095@novasbe.pt,sell,2026-01-19 04:00:00,uploaded_images/product_10.png,available
+238,Sneakers,Sneakers in good condition. Demo post by Mina.,clothes,0,10096@novasbe.pt,gift,2026-01-12 03:00:00,uploaded_images/product_13.png,available
+239,Notebook pack,Notebook pack in good condition. Demo post by Mina.,school supplies,115,10096@novasbe.pt,auction,2026-01-05 02:00:00,uploaded_images/product_19.png,available
+240,Plant pot,Plant pot in good condition. Demo post by Mina.,decoration,119,10096@novasbe.pt,sell,2025-12-29 01:00:00,uploaded_images/product_10.png,available
+241,Notebook pack,Notebook pack in good condition. Demo post by Arjun.,school supplies,0,10097@novasbe.pt,searching,2025-12-22 12:00:00,uploaded_images/product_19.png,available
+242,Desk chair,Desk chair in good condition. Demo post by Arjun.,furniture,0,10097@novasbe.pt,gift,2025-12-15 11:00:00,uploaded_images/product_1.png,available
+243,Coffee mug,Coffee mug in good condition. Demo post by Arjun.,kitchen,42,10097@novasbe.pt,sell,2025-12-08 10:00:00,uploaded_images/product_6.png,available
+244,Plant pot,Plant pot in good condition. Demo post by Arjun.,decoration,160,10097@novasbe.pt,auction,2025-12-01 09:00:00,uploaded_images/product_10.png,available
+245,Statistics book,Statistics book in good condition. Demo post by Sara.,books,0,10098@novasbe.pt,searching,2026-04-28 08:00:00,uploaded_images/product_2.png,available
+246,Tennis racket,Tennis racket in good condition. Demo post by Daniel.,sports,69,10099@novasbe.pt,auction,2026-04-21 07:00:00,uploaded_images/product_8.png,available
