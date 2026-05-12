@@ -732,6 +732,20 @@ def set_item_status(item_id, new_status, current_user):
     return changed > 0
 
 
+def update_item(item_id, current_user, title, description, category, price, end_time):
+    conn = connect_db()
+    cursor = conn.cursor()
+    cursor.execute("""
+        UPDATE items
+        SET title = ?, description = ?, category = ?, price = ?, end_time = ?
+        WHERE id = ? AND seller_username = ?
+    """, (title, description, category, price, end_time, item_id, current_user))
+    changed = cursor.rowcount
+    conn.commit()
+    conn.close()
+    return changed > 0
+
+
 
 def get_disposal_categories():
     conn = connect_db()
@@ -1047,19 +1061,20 @@ def display_item(
 
     if current_user is not None and seller_username == current_user and owner_controls:
         st.write("Owner controls")
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
+        if col1.button("Edit", key=f"{key_prefix}_owner_edit_{item_id}"):
+            edit_item_dialog(item, current_user)
         if status == "available":
-            if col1.button("Mark unavailable", key=f"{key_prefix}_owner_unavailable_{item_id}"):
+            if col2.button("Mark unavailable", key=f"{key_prefix}_owner_unavailable_{item_id}"):
                 set_item_status(item_id, "unavailable", current_user)
                 st.success("Item marked as unavailable.")
                 st.rerun()
         else:
-            if col1.button("Mark available", key=f"{key_prefix}_owner_available_{item_id}"):
+            if col2.button("Mark available", key=f"{key_prefix}_owner_available_{item_id}"):
                 set_item_status(item_id, "available", current_user)
                 st.success("Item marked as available.")
                 st.rerun()
-
-        if col2.button("Delete post", key=f"{key_prefix}_owner_delete_{item_id}"):
+        if col3.button("Delete post", key=f"{key_prefix}_owner_delete_{item_id}"):
             delete_item(item_id, current_user)
             st.success("Post deleted.")
             st.rerun()
@@ -1119,6 +1134,48 @@ def old_post_warning_dialog(old_items):
     if st.button("Close window", key="modal_close_old_post_warning"):
         st.session_state.show_old_post_warning = False
         st.rerun()
+
+
+@st.dialog("Edit post")
+def edit_item_dialog(item, current_user):
+    new_title = st.text_input("Title", value=item.title, key=f"edit_title_{item.id}")
+    new_description = st.text_area("Description", value=item.description, key=f"edit_desc_{item.id}")
+    category_index = CATEGORIES.index(item.category) if item.category in CATEGORIES else 0
+    new_category = st.selectbox("Category", CATEGORIES, index=category_index, key=f"edit_cat_{item.id}")
+
+    if item.post_type == "gift":
+        new_price = 0
+        st.caption("Gifts are free, so no price.")
+    elif item.post_type == "searching":
+        new_price = st.number_input("Maximum amount you would pay", min_value=0, value=int(item.price), key=f"edit_price_{item.id}")
+    elif item.is_auction():
+        new_price = st.number_input("Starting price", min_value=0, value=int(item.price), key=f"edit_price_{item.id}")
+    else:
+        new_price = st.number_input("Price", min_value=0, value=int(item.price), key=f"edit_price_{item.id}")
+
+    new_end_time = None
+    if item.is_auction():
+        current_end = item.end_time()
+        if current_end is not None:
+            current_end_date = datetime.strptime(current_end, "%Y-%m-%d %H:%M:%S").date()
+        else:
+            current_end_date = datetime.now().date() + timedelta(days=7)
+        new_end_date = st.date_input(
+            "Auction end date",
+            value=current_end_date,
+            min_value=datetime.now().date(),
+            key=f"edit_end_{item.id}",
+        )
+        new_end_time = new_end_date.strftime("%Y-%m-%d") + " 23:59:59"
+
+    if st.button("Save changes", key=f"edit_save_{item.id}"):
+        if new_title.strip() == "":
+            st.error("Title cannot be empty.")
+        elif update_item(item.id, current_user, new_title.strip(), new_description, new_category, new_price, new_end_time):
+            st.success("Post updated.")
+            st.rerun()
+        else:
+            st.error("Could not update this post.")
 
 
 create_tables()
